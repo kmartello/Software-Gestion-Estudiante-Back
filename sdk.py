@@ -3,9 +3,8 @@ import psycopg2
 
 def getConnection():
     try:
-        DATABASE_URL = config('DATABASE_URL')
         conn = psycopg2.connect(
-            DATABASE_URL, 
+            config('DATABASE_URL'), 
             sslmode='require'
         )
         return conn
